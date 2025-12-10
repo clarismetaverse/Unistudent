@@ -37,15 +37,51 @@
       flex-direction: column;
     }
 
-    /* BARRA COLORATA STILE NORD EUROPA */
+    /* BARRA COLORATA STILE NORD EUROPA + ACCENTO ORO */
     .card-header-bar {
       height: 9mm;
-      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      background: linear-gradient(135deg, #0f172a, #1e3a8a 60%, #f59e0b);
       display: flex;
       align-items: center;
       padding: 0 5mm;
       box-sizing: border-box;
       color: #e5e7eb;
+      gap: 3mm;
+    }
+
+    .logo-mark {
+      width: 5mm;
+      height: 5mm;
+      border-radius: 1.5mm;
+      background: radial-gradient(circle at 20% 20%, #facc15, #1e3a8a 55%, #020617 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .logo-mark::before {
+      content: "";
+      position: absolute;
+      inset: 25%;
+      border-radius: 999px;
+      border: 0.3mm solid rgba(248, 250, 252, 0.75);
+      transform: rotate(18deg);
+    }
+
+    .logo-mark::after {
+      content: "";
+      position: absolute;
+      width: 140%;
+      height: 0.4mm;
+      background: linear-gradient(90deg, rgba(248, 250, 252, 0), rgba(248, 250, 252, 0.9), rgba(248, 250, 252, 0));
+      top: 60%;
+      left: -20%;
+      transform: rotate(-18deg);
+    }
+
+    .card-header-title-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3mm;
     }
 
     .card-header-title {
@@ -56,10 +92,10 @@
     }
 
     .card-header-subtitle {
-      margin-left: auto;
       font-size: 2.2mm;
-      opacity: 0.8;
+      opacity: 0.85;
       text-transform: uppercase;
+      letter-spacing: 0.25mm;
     }
 
     /* FRONTE */
@@ -94,6 +130,15 @@
       color: #6b7280;
       margin-top: 1mm;
       margin-bottom: 0.4mm;
+    }
+
+    .sub-label {
+      display: block;
+      font-size: 1.9mm;
+      text-transform: none;
+      letter-spacing: 0.1mm;
+      color: #9ca3af;
+      margin-top: 0.1mm;
     }
 
     .field-value {
@@ -137,6 +182,10 @@
       color: #6b7280;
     }
 
+    .id-label .sub-label {
+      font-size: 1.9mm;
+    }
+
     .id-value {
       font-weight: 500;
     }
@@ -153,12 +202,12 @@
       align-items: center;
       border-radius: 999px;
       padding: 0.7mm 2.5mm;
-      border: 0.25mm solid #cbd5f5;
+      border: 0.25mm solid #facc15;
       font-size: 2mm;
       text-transform: uppercase;
       letter-spacing: 0.25mm;
-      color: #1e40af;
-      background: #e0ebff;
+      color: #92400e;
+      background: #fef9c3;
       margin-top: 1mm;
     }
 
@@ -184,6 +233,10 @@
       margin-bottom: 1mm;
     }
 
+    .section-title .sub-label {
+      font-size: 2mm;
+    }
+
     .section-box {
       border-radius: 1.5mm;
       border: 0.25mm solid #d1d5db;
@@ -191,6 +244,18 @@
       margin-bottom: 2mm;
       box-sizing: border-box;
       background: #f9fafb;
+      position: relative;
+    }
+
+    .section-box::before {
+      content: "";
+      position: absolute;
+      top: -0.7mm;
+      left: 3mm;
+      width: 10mm;
+      height: 0.4mm;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #f59e0b, #facc15);
     }
 
     .section-box small {
@@ -212,6 +277,10 @@
       color: #4b5563;
     }
 
+    .signature-label .sub-label {
+      font-size: 2mm;
+    }
+
     .signature-space {
       flex: 1;
       border-bottom: 0.2mm dashed #9ca3af;
@@ -230,6 +299,7 @@
       font-weight: 600;
       letter-spacing: 0.35mm;
       margin-bottom: 1mm;
+      color: #b45309;
     }
 
     .qr-placeholder {
@@ -244,6 +314,7 @@
       text-align: center;
       margin-left: auto;
       margin-top: 1mm;
+      background: #fefce8;
     }
 
     .contact {
@@ -271,77 +342,110 @@
     <!-- FRONTE -->
     <div class="card">
       <div class="card-header-bar">
-        <div class="card-header-title">Student Card</div>
-        <div class="card-header-subtitle">Personal ID</div>
+        <div class="logo-mark"></div>
+        <div class="card-header-title-block">
+          <div class="card-header-title">Student Card</div>
+          <div class="card-header-subtitle">Personal Study ID</div>
+        </div>
       </div>
       <div class="front-inner">
         <div class="front-left">
           <div>
-            <div class="field-label">Nome e cognome</div>
+            <div class="field-label">
+              Nome e cognome
+              <span class="sub-label">Naam en achternaam</span>
+            </div>
             <div class="field-value">Federico Somaschini</div>
 
-            <div class="field-label">Programme</div>
+            <div class="field-label">
+              Corso di studi / Programme
+              <span class="sub-label">Opleiding</span>
+            </div>
             <div class="field-value">
               MSc Artificial Intelligence<br />
               <span class="mini">Utrecht University</span>
             </div>
 
-            <div class="field-label">Data di nascita</div>
+            <div class="field-label">
+              Data di nascita
+              <span class="sub-label">Geboortedatum</span>
+            </div>
             <div class="field-value">29 / 07 / 1990</div>
 
             <div class="id-row">
-              <span class="id-label">ID studente</span><br />
+              <span class="id-label">
+                ID studente
+                <span class="sub-label">Studentnummer</span>
+              </span><br />
               <span class="id-value">________________________</span>
             </div>
 
             <div class="id-row">
-              <span class="id-label">Valido fino a</span><br />
+              <span class="id-label">
+                Valido fino a
+                <span class="sub-label">Geldig tot</span>
+              </span><br />
               <span class="id-value">____ / ____ / ______</span>
             </div>
           </div>
 
           <div>
-            <span class="badge-pill">Uso personale</span>
+            <span class="badge-pill">Uso personale · Persoonlijk gebruik</span>
           </div>
         </div>
 
         <div class="front-right">
           <div class="photo">
             Incollare foto<br />
-            formato tessera
+            formato tessera<br />
+            <!-- Foto pasfoto-formaat -->
           </div>
         </div>
       </div>
 
       <div class="footer-front">
-        Tessera personale di studio – non emessa né approvata
-        ufficialmente da Utrecht University o da altre istituzioni.
+        Tessera personale di studio – non emessa né approvata ufficialmente
+        da Utrecht University o da altre istituzioni.<br />
+        Persoonlijke studiekaart – niet officieel uitgegeven of goedgekeurd
+        door Utrecht University of andere instellingen.
       </div>
     </div>
 
     <!-- RETRO -->
     <div class="card">
       <div class="card-header-bar">
-        <div class="card-header-title">Back</div>
-        <div class="card-header-subtitle">Info & Note</div>
+        <div class="logo-mark"></div>
+        <div class="card-header-title-block">
+          <div class="card-header-title">Back</div>
+          <div class="card-header-subtitle">Info &amp; Notes</div>
+        </div>
       </div>
       <div class="back-inner">
         <div>
-          <div class="section-title">Contatti</div>
+          <div class="section-title">
+            Contatti
+            <span class="sub-label">Contact</span>
+          </div>
           <div class="section-box">
             <div class="contact">
               Email: ___________________________<br />
               Tel: _____________________________
             </div>
-            <small>In caso di smarrimento, contattare il titolare della
-              tessera.</small>
+            <small>
+              In caso di smarrimento, contattare il titolare della tessera.<br />
+              Bij verlies: neem contact op met de houder van deze kaart.
+            </small>
           </div>
 
-          <div class="section-title">Note personali</div>
+          <div class="section-title">
+            Note personali
+            <span class="sub-label">Persoonlijke notities</span>
+          </div>
           <div class="section-box">
             <small>
-              Spazio per eventuali informazioni aggiuntive (es. contatto
-              di emergenza, allergie, ecc.).
+              Spazio per informazioni aggiuntive (es. contatto di emergenza,
+              allergie, ecc.).<br />
+              Ruimte voor extra informatie (bijv. noodcontact, allergieën, enz.).
             </small>
             <br /><br />
             ________________________________________<br />
@@ -352,7 +456,10 @@
 
         <div>
           <div class="signature-line">
-            <span class="signature-label">Firma del titolare</span>
+            <span class="signature-label">
+              Firma del titolare
+              <span class="sub-label">Handtekening houder</span>
+            </span>
             <span class="signature-space"></span>
           </div>
           <br />
@@ -364,12 +471,14 @@
                 </div>
                 Questo badge è un supporto personale di riconoscimento
                 per lo studio e l’organizzazione individuale. Non sostituisce
-                documenti universitari, tessere studente ufficiali o altri
-                documenti di identità.
+                documenti universitari, tessere studente ufficiali o documenti di identità.<br /><br />
+                Deze kaart is geen officieel studentenpasje. Het vervangt geen
+                universitaire documenten, officiële studentenkaarten of identiteitsbewijzen.
               </div>
             </div>
             <div class="qr-placeholder">
-              Spazio QR<br />personale (URL,<br />portfolio, ecc.)
+              Spazio QR<br />personale<br />(URL, portfolio, ecc.)<br /><br />
+              Persoonlijke QR
             </div>
           </div>
         </div>
@@ -379,3 +488,4 @@
   </div>
 </body>
 </html>
+
