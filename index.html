@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Tessera personale di studio</title>
+  <title>Personal Study Card</title>
   <style>
     @page {
       margin: 0;
@@ -276,6 +276,12 @@
       background: #fefce8;
     }
 
+    .contact {
+      font-size: 2.1mm;
+      color: #374151;
+      line-height: 1.4;
+    }
+
     @media print {
       body { background: #fff; padding: 0; }
       .card { box-shadow: none; }
@@ -304,31 +310,48 @@
       <div class="front-inner">
         <div class="front-left">
           <div>
-            <div class="field-label">NOME E COGNOME<span class="sub-label">Naam en achternaam</span></div>
+            <div class="field-label">
+              FULL NAME
+              <span class="sub-label">Volledige naam</span>
+            </div>
             <div class="field-value">Federico Somaschini</div>
 
-            <div class="field-label">CORSO DI STUDI / PROGRAMME<span class="sub-label">Opleiding</span></div>
+            <div class="field-label">
+              STUDY PROGRAMME
+              <span class="sub-label">Opleiding</span>
+            </div>
             <div class="field-value">
               MSc Artificial Intelligence<br />
               <span class="mini">Utrecht University</span>
             </div>
 
-            <div class="field-label">DATA DI NASCITA<span class="sub-label">Geboortedatum</span></div>
+            <div class="field-label">
+              DATE OF BIRTH
+              <span class="sub-label">Geboortedatum</span>
+            </div>
             <div class="field-value">29 / 07 / 1990</div>
 
-            <div class="id-row">
-              <span class="id-label">ID STUDENTE<span class="sub-label">Studentnummer</span></span><br />
-              <span class="id-value">________________________</span>
-            </div>
+           <div class="id-row" style="margin-bottom: 3mm;"> 
+             
+  <span class="id-label">
+    STUDENT ID
+    <span class="sub-label">Studentnummer</span>
+  </span><br />
+  <span class="id-value">74786</span>
+</div>
+
 
             <div class="id-row">
-              <span class="id-label">VALIDO FINO A<span class="sub-label">Geldig tot</span></span><br />
+              <span class="id-label">
+                VALID UNTIL
+                <span class="sub-label">Geldig tot</span>
+              </span><br />
               <span class="id-value">31 / 08 / 2027</span>
             </div>
           </div>
 
           <div>
-            <span class="badge-pill">Uso personale · Persoonlijk gebruik</span>
+            <span class="badge-pill">Personal use · Persoonlijk gebruik</span>
           </div>
         </div>
 
@@ -341,10 +364,7 @@
         </div>
       </div>
 
-      <div class="footer-front">
-        Tessera personale – non valida come documento ufficiale.<br />
-        Persoonlijke kaart – geen officieel document.
-      </div>
+    
     </div>
 
     <!-- BACK -->
@@ -352,7 +372,7 @@
       <div class="card-header-bar">
         <img
           class="logo-mark"
-          src="https://raw.githubusercontent.com/clarismetaverse/Unistudent/main/pic.png"
+          src="https://raw.githubusercontent.com/clarismetaverse/Unistudent/main/uu-logo-removebg-preview.png?raw=1"
           alt="Utrecht logo"
         />
         <div class="card-header-title-block">
@@ -363,23 +383,29 @@
 
       <div class="back-inner">
         <div>
-          <div class="section-title">CONTATTI<span class="sub-label">Contact</span></div>
+          <div class="section-title">
+            CONTACT DETAILS
+            <span class="sub-label">Contactgegevens</span>
+          </div>
           <div class="section-box">
             <div class="contact">
               Email: ______________________________<br />
-              Tel: ________________________________
+              Phone: ______________________________
             </div>
             <small>
-              In caso di smarrimento, contattare il titolare della tessera.<br />
-              Bij verlies: neem contact op met de houder van deze kaart.
+              Primary email and phone for study-related communication.<br />
+              Primair e-mailadres en telefoonnummer voor studiegerelateerde communicatie.
             </small>
           </div>
 
-          <div class="section-title">NOTE PERSONALI<span class="sub-label">Persoonlijke notities</span></div>
+          <div class="section-title">
+            PERSONAL NOTES
+            <span class="sub-label">Persoonlijke notities</span>
+          </div>
           <div class="section-box">
             <small>
-              Spazio per informazioni aggiuntive (es. contatto emergenza, allergie...).<br />
-              Ruimte voor extra informatie (bijv. noodcontact, allergieën...).
+              Space for additional information (e.g. emergency contact, allergies).<br />
+              Ruimte voor extra informatie (bijv. noodcontact, allergieën).
             </small>
             <br /><br />
             ________________________________________<br />
@@ -390,19 +416,16 @@
 
         <div>
           <div class="signature-line">
-            <span class="signature-label">Firma<span class="sub-label">Handtekening</span></span>
+            <span class="signature-label">
+              Signature
+              <span class="sub-label">Handtekening</span>
+            </span>
             <span class="signature-space"></span>
           </div>
 
           <br />
 
-          <div style="display:flex; gap:4mm; align-items:flex-start;">
-            <div style="flex:1;">
-              <div class="disclaimer">
-                <div class="strong-disclaimer">NON È UN DOCUMENTO UFFICIALE</div>
-                Questa tessera è un supporto personale e non sostituisce documenti di identità o tesserini ufficiali.
-              </div>
-            </div>
+          
 
             <div class="qr-wrapper">
               <img
@@ -419,7 +442,3 @@
   </div>
 </body>
 </html>
-
-
-
-
