@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -50,35 +49,15 @@
       gap: 3mm;
     }
 
-    /* LOGO ASTRATTO DI DEFAULT (se non usi un tuo logo esterno) */
+    /* LOGO IMG DA GITHUB (UTRECHT) */
     .logo-mark {
-      width: 5mm;
-      height: 5mm;
+      width: 7mm;
+      height: 7mm;
+      object-fit: contain;
+      background: #f9fafb;
       border-radius: 1.5mm;
-      background: radial-gradient(circle at 20% 20%, #facc15, #1e3a8a 55%, #020617 100%);
-      position: relative;
-      overflow: hidden;
+      padding: 0.5mm;
       flex-shrink: 0;
-    }
-
-    .logo-mark::before {
-      content: "";
-      position: absolute;
-      inset: 25%;
-      border-radius: 999px;
-      border: 0.3mm solid rgba(248, 250, 252, 0.75);
-      transform: rotate(18deg);
-    }
-
-    .logo-mark::after {
-      content: "";
-      position: absolute;
-      width: 140%;
-      height: 0.4mm;
-      background: linear-gradient(90deg, rgba(248, 250, 252, 0), rgba(248, 250, 252, 0.9), rgba(248, 250, 252, 0));
-      top: 60%;
-      left: -20%;
-      transform: rotate(-18deg);
     }
 
     .card-header-title-block {
@@ -350,7 +329,11 @@
     <!-- FRONTE -->
     <div class="card">
       <div class="card-header-bar">
-        <div class="logo-mark"></div>
+        <img
+          class="logo-mark"
+          src="https://raw.githubusercontent.com/clarismetaverse/Unistudent/main/uu-logo-removebg-preview.png"
+          alt="Utrecht logo"
+        />
         <div class="card-header-title-block">
           <div class="card-header-title">Student Card</div>
           <div class="card-header-subtitle">Personal Study ID</div>
@@ -393,7 +376,7 @@
                 Valido fino a
                 <span class="sub-label">Geldig tot</span>
               </span><br />
-              <!-- DATA DI SCADENZA REALISTICA -->
+              <!-- DATA DI SCADENZA -->
               <span class="id-value">31 / 08 / 2027</span>
             </div>
           </div>
@@ -422,7 +405,11 @@
     <!-- RETRO -->
     <div class="card">
       <div class="card-header-bar">
-        <div class="logo-mark"></div>
+        <img
+          class="logo-mark"
+          src="https://raw.githubusercontent.com/clarismetaverse/Unistudent/main/uu-logo-removebg-preview.png"
+          alt="Utrecht logo"
+        />
         <div class="card-header-title-block">
           <div class="card-header-title">Back</div>
           <div class="card-header-subtitle">Info &amp; Notes</div>
@@ -485,10 +472,10 @@
               </div>
             </div>
             <div class="qr-wrapper">
-              <!-- QUI METTI IL QR VERO -->
+              <!-- Sostituisci la src con il RAW del tuo QR reale -->
               <img
                 class="qr-image"
-                src="https://raw.githubusercontent.com/TUO-UTENTE/TUO-REPO/main/qr-federico.png"
+                src="https://raw.githubusercontent.com/clarismetaverse/Unistudent/main/qr-federico.png"
                 alt="QR code - profilo personale"
               />
             </div>
@@ -500,3 +487,4 @@
   </div>
 </body>
 </html>
+
