@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -49,6 +50,7 @@
       gap: 3mm;
     }
 
+    /* LOGO ASTRATTO DI DEFAULT (se non usi un tuo logo esterno) */
     .logo-mark {
       width: 5mm;
       height: 5mm;
@@ -56,6 +58,7 @@
       background: radial-gradient(circle at 20% 20%, #facc15, #1e3a8a 55%, #020617 100%);
       position: relative;
       overflow: hidden;
+      flex-shrink: 0;
     }
 
     .logo-mark::before {
@@ -302,19 +305,24 @@
       color: #b45309;
     }
 
-    .qr-placeholder {
-      width: 18mm;
-      height: 18mm;
-      border-radius: 1mm;
-      border: 0.35mm dashed #9ca3af;
+    /* QR vero (immagine) */
+    .qr-wrapper {
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.9mm;
-      text-align: center;
       margin-left: auto;
       margin-top: 1mm;
+    }
+
+    .qr-image {
+      width: 18mm;
+      height: 18mm;
+      border-radius: 1mm;
+      border: 0.35mm solid #9ca3af;
+      padding: 1mm;
+      box-sizing: border-box;
       background: #fefce8;
+      object-fit: contain;
     }
 
     .contact {
@@ -385,7 +393,8 @@
                 Valido fino a
                 <span class="sub-label">Geldig tot</span>
               </span><br />
-              <span class="id-value">____ / ____ / ______</span>
+              <!-- DATA DI SCADENZA REALISTICA -->
+              <span class="id-value">31 / 08 / 2027</span>
             </div>
           </div>
 
@@ -397,8 +406,7 @@
         <div class="front-right">
           <div class="photo">
             Incollare foto<br />
-            formato tessera<br />
-            <!-- Foto pasfoto-formaat -->
+            formato tessera
           </div>
         </div>
       </div>
@@ -476,9 +484,13 @@
                 universitaire documenten, officiële studentenkaarten of identiteitsbewijzen.
               </div>
             </div>
-            <div class="qr-placeholder">
-              Spazio QR<br />personale<br />(URL, portfolio, ecc.)<br /><br />
-              Persoonlijke QR
+            <div class="qr-wrapper">
+              <!-- QUI METTI IL QR VERO -->
+              <img
+                class="qr-image"
+                src="https://raw.githubusercontent.com/TUO-UTENTE/TUO-REPO/main/qr-federico.png"
+                alt="QR code - profilo personale"
+              />
             </div>
           </div>
         </div>
@@ -488,4 +500,3 @@
   </div>
 </body>
 </html>
-
