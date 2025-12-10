@@ -1,3 +1,18 @@
+
+Ok, andiamo di stile **Nordic gov ID**: pulito, minimale, serif-free, poco ombra, tanto ordine ✨
+
+Qui sotto hai **HTML completo** già aggiornato: ti basta incollare tutto in `tesserino-universitario.html`.
+
+> Ho lasciato:
+>
+> * logo Utrecht da GitHub (già in `src`),
+> * scadenza **31 / 08 / 2027**,
+> * QR con `qr-federico.png` (cambia la `src` se usi un altro nome),
+> * disclaimer ben chiaro che NON è tessera ufficiale.
+
+---
+
+```html
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -10,8 +25,8 @@
 
     body {
       margin: 0;
-      padding: 10mm;
-      background: #d9dde3;
+      padding: 12mm;
+      background: #e5e7eb; /* grigio chiaro stile gov */
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
         "Segoe UI", Roboto, sans-serif;
     }
@@ -19,7 +34,7 @@
     .sheet {
       display: flex;
       flex-direction: row;
-      gap: 8mm;
+      gap: 10mm;
       justify-content: flex-start;
       align-items: flex-start;
     }
@@ -27,57 +42,72 @@
     .card {
       width: 85.6mm;
       height: 54mm;
-      border-radius: 3mm;
-      box-shadow: 0 0 1.2mm rgba(7, 16, 36, 0.45);
+      border-radius: 0 0 2.8mm 2.8mm; /* solo in basso, top arrotondato dalla barra */
       box-sizing: border-box;
       overflow: hidden;
-      background: #f8fafc;
+      background: #f9fafb;
       position: relative;
       display: flex;
       flex-direction: column;
+      border: 0.25mm solid #d1d5db;
+      box-shadow: 0 0.4mm 1.2mm rgba(15, 23, 42, 0.15); /* sobrio */
     }
 
-    /* BARRA COLORATA STILE NORD EUROPA + ACCENTO ORO */
+    /* BARRA SUPERIORE STILE GOV NORDICO */
     .card-header-bar {
-      height: 9mm;
-      background: linear-gradient(135deg, #0f172a, #1e3a8a 60%, #f59e0b);
+      height: 10mm;
+      background:
+        linear-gradient(90deg, #020617 0, #0f172a 45%, #1e3a8a 80%, #facc15 100%);
       display: flex;
       align-items: center;
       padding: 0 5mm;
       box-sizing: border-box;
       color: #e5e7eb;
       gap: 3mm;
+      border-radius: 2.8mm 2.8mm 0 0; /* arrotondato solo in alto */
+      border-bottom: 0.4mm solid rgba(15, 23, 42, 0.5);
     }
 
-    /* LOGO IMG DA GITHUB (UTRECHT) */
     .logo-mark {
       width: 7mm;
       height: 7mm;
       object-fit: contain;
       background: #f9fafb;
-      border-radius: 1.5mm;
+      border-radius: 1.4mm;
       padding: 0.5mm;
       flex-shrink: 0;
+      box-shadow: 0 0 0 0.2mm rgba(15, 23, 42, 0.3);
     }
 
     .card-header-title-block {
       display: flex;
       flex-direction: column;
-      gap: 0.3mm;
+      gap: 0.5mm;
     }
 
     .card-header-title {
       font-size: 3mm;
       font-weight: 600;
-      letter-spacing: 0.4mm;
+      letter-spacing: 0.35mm;
       text-transform: uppercase;
     }
 
     .card-header-subtitle {
       font-size: 2.2mm;
-      opacity: 0.85;
+      opacity: 0.9;
       text-transform: uppercase;
       letter-spacing: 0.25mm;
+    }
+
+    /* linea sottile gialla sotto il titolo per vibe “istituzionale” */
+    .card-header-subtitle::after {
+      content: "";
+      display: block;
+      margin-top: 0.7mm;
+      width: 16mm;
+      height: 0.5mm;
+      border-radius: 999px;
+      background: #facc15;
     }
 
     /* FRONTE */
@@ -88,7 +118,7 @@
       flex-direction: row;
       padding: 4mm 5mm;
       box-sizing: border-box;
-      gap: 4mm;
+      gap: 5mm;
     }
 
     .front-left {
@@ -106,28 +136,28 @@
     }
 
     .field-label {
-      font-size: 2.2mm;
+      font-size: 2.1mm;
       text-transform: uppercase;
-      letter-spacing: 0.25mm;
+      letter-spacing: 0.24mm;
       color: #6b7280;
-      margin-top: 1mm;
-      margin-bottom: 0.4mm;
+      margin-top: 0.5mm;
+      margin-bottom: 0.3mm;
     }
 
     .sub-label {
       display: block;
       font-size: 1.9mm;
       text-transform: none;
-      letter-spacing: 0.1mm;
+      letter-spacing: 0.08mm;
       color: #9ca3af;
       margin-top: 0.1mm;
     }
 
     .field-value {
       font-size: 2.9mm;
-      font-weight: 520;
+      font-weight: 540;
       color: #111827;
-      line-height: 1.25;
+      line-height: 1.28;
     }
 
     .mini {
@@ -138,28 +168,29 @@
     .photo {
       width: 20mm;
       height: 26mm;
-      border-radius: 2mm;
-      border: 0.35mm solid #9ca3af;
-      margin-top: 3mm;
+      border-radius: 1.8mm;
+      border: 0.35mm solid #cbd5e1;
+      margin-top: 4mm;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2.2mm;
+      font-size: 2.1mm;
       text-align: center;
       padding: 1mm;
       box-sizing: border-box;
-      background: #e5e7eb;
+      background: linear-gradient(135deg, #e5e7eb, #f9fafb);
+      color: #6b7280;
     }
 
     .id-row {
-      margin-top: 3mm;
+      margin-top: 2.5mm;
       font-size: 2.4mm;
       color: #374151;
     }
 
     .id-label {
       text-transform: uppercase;
-      letter-spacing: 0.2mm;
+      letter-spacing: 0.22mm;
       font-size: 2.1mm;
       color: #6b7280;
     }
@@ -173,24 +204,25 @@
     }
 
     .footer-front {
-      font-size: 2mm;
+      font-size: 1.9mm;
       color: #6b7280;
       padding: 0 5mm 3mm 5mm;
       box-sizing: border-box;
+      border-top: 0.25mm solid #e5e7eb;
     }
 
     .badge-pill {
       display: inline-flex;
       align-items: center;
       border-radius: 999px;
-      padding: 0.7mm 2.5mm;
-      border: 0.25mm solid #facc15;
-      font-size: 2mm;
+      padding: 0.7mm 2.7mm;
+      border: 0.23mm solid #facc15;
+      font-size: 1.9mm;
       text-transform: uppercase;
-      letter-spacing: 0.25mm;
+      letter-spacing: 0.23mm;
       color: #92400e;
       background: #fef9c3;
-      margin-top: 1mm;
+      margin-top: 1.5mm;
     }
 
     /* RETRO */
@@ -211,7 +243,7 @@
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.3mm;
-      color: #374151;
+      color: #111827;
       margin-bottom: 1mm;
     }
 
@@ -220,10 +252,10 @@
     }
 
     .section-box {
-      border-radius: 1.5mm;
+      border-radius: 1.8mm;
       border: 0.25mm solid #d1d5db;
-      padding: 1.5mm 2mm;
-      margin-bottom: 2mm;
+      padding: 1.7mm 2mm;
+      margin-bottom: 2.2mm;
       box-sizing: border-box;
       background: #f9fafb;
       position: relative;
@@ -232,10 +264,10 @@
     .section-box::before {
       content: "";
       position: absolute;
-      top: -0.7mm;
+      top: -0.85mm;
       left: 3mm;
-      width: 10mm;
-      height: 0.4mm;
+      width: 9mm;
+      height: 0.5mm;
       border-radius: 999px;
       background: linear-gradient(90deg, #f59e0b, #facc15);
     }
@@ -247,8 +279,8 @@
 
     .signature-line {
       margin-top: 3mm;
-      border-top: 0.25mm solid #9ca3af;
-      padding-top: 0.8mm;
+      border-top: 0.25mm solid #d1d5db;
+      padding-top: 1mm;
       font-size: 2.1mm;
       display: flex;
       justify-content: space-between;
@@ -273,7 +305,7 @@
     .disclaimer {
       font-size: 1.9mm;
       color: #6b7280;
-      line-height: 1.35;
+      line-height: 1.4;
     }
 
     .strong-disclaimer {
@@ -284,7 +316,6 @@
       color: #b45309;
     }
 
-    /* QR vero (immagine) */
     .qr-wrapper {
       display: flex;
       align-items: center;
@@ -296,8 +327,8 @@
     .qr-image {
       width: 18mm;
       height: 18mm;
-      border-radius: 1mm;
-      border: 0.35mm solid #9ca3af;
+      border-radius: 1.3mm;
+      border: 0.3mm solid #cbd5e1;
       padding: 1mm;
       box-sizing: border-box;
       background: #fefce8;
@@ -331,7 +362,7 @@
       <div class="card-header-bar">
         <img
           class="logo-mark"
-          src="https://raw.githubusercontent.com/clarismetaverse/Unistudent/main/pic.png"
+          src="https://raw.githubusercontent.com/clarismetaverse/Unistudent/main/uu-logo-removebg-preview.png"
           alt="Utrecht logo"
         />
         <div class="card-header-title-block">
@@ -376,7 +407,6 @@
                 Valido fino a
                 <span class="sub-label">Geldig tot</span>
               </span><br />
-              <!-- DATA DI SCADENZA -->
               <span class="id-value">31 / 08 / 2027</span>
             </div>
           </div>
@@ -472,7 +502,7 @@
               </div>
             </div>
             <div class="qr-wrapper">
-              <!-- Sostituisci la src con il RAW del tuo QR reale -->
+              <!-- Cambia la src col RAW del tuo QR reale -->
               <img
                 class="qr-image"
                 src="https://raw.githubusercontent.com/clarismetaverse/Unistudent/main/qr-federico.png"
@@ -487,4 +517,7 @@
   </div>
 </body>
 </html>
+```
+
+Se quando lo stampi noti che il bordo è un filo troppo spesso o l’ombra troppo presente, possiamo fare una micro–versione “ultra-flat plastic card” ancora più gov/minimale.
 
