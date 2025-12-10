@@ -11,7 +11,7 @@
     body {
       margin: 0;
       padding: 12mm;
-      background: #e5e7eb; /* grey gov background */
+      background: #e5e7eb;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
 
@@ -26,7 +26,7 @@
     .card {
       width: 85.6mm;
       height: 54mm;
-      border-radius: 0 0 2.8mm 2.8mm; 
+      border-radius: 0 0 2.8mm 2.8mm;
       border: 0.25mm solid #d1d5db;
       box-shadow: 0 0.4mm 1.2mm rgba(15,23,42,0.15);
       box-sizing: border-box;
@@ -36,10 +36,9 @@
       flex-direction: column;
     }
 
-    /* === HEADER BAR (Nordic Gov Style) === */
     .card-header-bar {
       height: 10mm;
-      background: linear-gradient(90deg, #020617 0, #0f172a 45%, #1e3a8a 80%, #facc15 100%);
+      background: linear-gradient(90deg,#020617 0,#0f172a 45%,#1e3a8a 80%,#facc15 100%);
       display: flex;
       align-items: center;
       padding: 0 5mm;
@@ -57,6 +56,7 @@
       border-radius: 1.4mm;
       padding: 0.5mm;
       box-shadow: 0 0 0 0.2mm rgba(15,23,42,0.3);
+      flex-shrink: 0;
     }
 
     .card-header-title-block {
@@ -89,7 +89,6 @@
       background: #facc15;
     }
 
-    /* === FRONT STRUCTURE === */
     .front-inner {
       flex: 1;
       display: flex;
@@ -141,7 +140,6 @@
       color: #4b5563;
     }
 
-    /* === PHOTO === */
     .profile-photo {
       width: 20mm;
       height: 26mm;
@@ -153,7 +151,6 @@
       margin-top: 4mm;
     }
 
-    /* === ID ROW === */
     .id-row {
       margin-top: 2.5mm;
       font-size: 2.4mm;
@@ -171,7 +168,6 @@
       font-weight: 500;
     }
 
-    /* === FOOTER FRONT === */
     .footer-front {
       font-size: 1.9mm;
       color: #6b7280;
@@ -193,7 +189,6 @@
       margin-top: 1.5mm;
     }
 
-    /* === BACK === */
     .back-inner {
       flex: 1;
       display: flex;
@@ -237,7 +232,6 @@
       color: #6b7280;
     }
 
-    /* SIGNATURE */
     .signature-line {
       margin-top: 3mm;
       border-top: 0.25mm solid #d1d5db;
@@ -253,7 +247,6 @@
       margin-left: 3mm;
     }
 
-    /* DISCLAIMER */
     .disclaimer {
       font-size: 1.9mm;
       color: #6b7280;
@@ -268,7 +261,6 @@
       margin-bottom: 1mm;
     }
 
-    /* QR */
     .qr-wrapper {
       margin-left: auto;
       margin-top: 1mm;
@@ -298,36 +290,39 @@
     <!-- FRONT -->
     <div class="card">
       <div class="card-header-bar">
-        <img class="logo-mark" src="https://raw.githubusercontent.com/clarismetaverse/Unistudent/main/uu-logo-removebg-preview.png" alt="Utrecht logo"/>
+        <img
+          class="logo-mark"
+          src="https://raw.githubusercontent.com/clarismetaverse/Unistudent/main/uu-logo-removebg-preview.png?raw=1"
+          alt="Utrecht logo"
+        />
         <div class="card-header-title-block">
-          <div class="card-header-title">Student Card</div>
-          <div class="card-header-subtitle">Personal Study ID</div>
+          <div class="card-header-title">STUDENT CARD</div>
+          <div class="card-header-subtitle">PERSONAL STUDY ID</div>
         </div>
       </div>
 
       <div class="front-inner">
         <div class="front-left">
-
           <div>
-            <div class="field-label">Nome e cognome<span class="sub-label">Naam en achternaam</span></div>
+            <div class="field-label">NOME E COGNOME<span class="sub-label">Naam en achternaam</span></div>
             <div class="field-value">Federico Somaschini</div>
 
-            <div class="field-label">Corso di studi / Programme<span class="sub-label">Opleiding</span></div>
+            <div class="field-label">CORSO DI STUDI / PROGRAMME<span class="sub-label">Opleiding</span></div>
             <div class="field-value">
-              MSc Artificial Intelligence<br>
+              MSc Artificial Intelligence<br />
               <span class="mini">Utrecht University</span>
             </div>
 
-            <div class="field-label">Data di nascita<span class="sub-label">Geboortedatum</span></div>
+            <div class="field-label">DATA DI NASCITA<span class="sub-label">Geboortedatum</span></div>
             <div class="field-value">29 / 07 / 1990</div>
 
             <div class="id-row">
-              <span class="id-label">ID Studente<span class="sub-label">Studentnummer</span></span><br>
+              <span class="id-label">ID STUDENTE<span class="sub-label">Studentnummer</span></span><br />
               <span class="id-value">________________________</span>
             </div>
 
             <div class="id-row">
-              <span class="id-label">Valido fino a<span class="sub-label">Geldig tot</span></span><br>
+              <span class="id-label">VALIDO FINO A<span class="sub-label">Geldig tot</span></span><br />
               <span class="id-value">31 / 08 / 2027</span>
             </div>
           </div>
@@ -338,16 +333,16 @@
         </div>
 
         <div class="front-right">
-          <img 
+          <img
             class="profile-photo"
-            src="https://raw.githubusercontent.com/clarismetaverse/Unistudent/main/me.jpg"
+            src="https://raw.githubusercontent.com/clarismetaverse/Unistudent/main/me.jpg?raw=1"
             alt="Federico Somaschini"
           />
         </div>
       </div>
 
       <div class="footer-front">
-        Tessera personale – non valida come documento ufficiale.<br>
+        Tessera personale – non valida come documento ufficiale.<br />
         Persoonlijke kaart – geen officieel document.
       </div>
     </div>
@@ -355,35 +350,40 @@
     <!-- BACK -->
     <div class="card">
       <div class="card-header-bar">
-        <img class="logo-mark" src="https://raw.githubusercontent.com/clarismetaverse/Unistudent/main/uu-logo-removebg-preview.png"/>
+        <img
+          class="logo-mark"
+          src="https://raw.githubusercontent.com/clarismetaverse/Unistudent/main/uu-logo-removebg-preview.png?raw=1"
+          alt="Utrecht logo"
+        />
         <div class="card-header-title-block">
-          <div class="card-header-title">Back</div>
-          <div class="card-header-subtitle">Info & Notes</div>
+          <div class="card-header-title">BACK</div>
+          <div class="card-header-subtitle">INFO & NOTES</div>
         </div>
       </div>
 
       <div class="back-inner">
-
         <div>
-          <div class="section-title">Contatti<span class="sub-label">Contact</span></div>
+          <div class="section-title">CONTATTI<span class="sub-label">Contact</span></div>
           <div class="section-box">
             <div class="contact">
-              Email: ______________________________<br>
+              Email: ______________________________<br />
               Tel: ________________________________
             </div>
-            <small>In caso di smarrimento, contattare il titolare della tessera.<br>
-            Bij verlies: neem contact op met de houder van deze kaart.</small>
+            <small>
+              In caso di smarrimento, contattare il titolare della tessera.<br />
+              Bij verlies: neem contact op met de houder van deze kaart.
+            </small>
           </div>
 
-          <div class="section-title">Note personali<span class="sub-label">Persoonlijke notities</span></div>
+          <div class="section-title">NOTE PERSONALI<span class="sub-label">Persoonlijke notities</span></div>
           <div class="section-box">
             <small>
-              Spazio per informazioni aggiuntive (es. contatto emergenza, allergie...).<br>
+              Spazio per informazioni aggiuntive (es. contatto emergenza, allergie...).<br />
               Ruimte voor extra informatie (bijv. noodcontact, allergieën...).
             </small>
-            <br><br>
-            ________________________________________<br>
-            ________________________________________<br>
+            <br /><br />
+            ________________________________________<br />
+            ________________________________________<br />
             ________________________________________
           </div>
         </div>
@@ -394,29 +394,31 @@
             <span class="signature-space"></span>
           </div>
 
-          <br>
+          <br />
 
           <div style="display:flex; gap:4mm; align-items:flex-start;">
             <div style="flex:1;">
               <div class="disclaimer">
-                <div class="strong-disclaimer">Non è un documento ufficiale</div>
-                Questa tessera è un supporto personale e non sostituisce documenti veri e propri.
+                <div class="strong-disclaimer">NON È UN DOCUMENTO UFFICIALE</div>
+                Questa tessera è un supporto personale e non sostituisce documenti di identità o tesserini ufficiali.
               </div>
             </div>
 
             <div class="qr-wrapper">
-              <img class="qr-image"
-                src="https://raw.githubusercontent.com/clarismetaverse/Unistudent/main/qr-federico.png"
-                alt="QR Code"/>
+              <img
+                class="qr-image"
+                src="https://raw.githubusercontent.com/clarismetaverse/Unistudent/main/qr-federico.png?raw=1"
+                alt="QR Code"
+              />
             </div>
           </div>
         </div>
-
       </div>
     </div>
 
   </div>
 </body>
 </html>
+
 
 
