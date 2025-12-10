@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tessera personale di studio</title>
+  <style>
+    @page {
+      margin: 0;
+    }
+
+    body {
+      margin: 0;
+      padding: 10mm;
+      background: #d9dde3;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", Roboto, sans-serif;
+    }
+
+    .sheet {
+      display: flex;
+      flex-direction: row;
+      gap: 8mm;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    .card {
+      width: 85.6mm;
+      height: 54mm;
+      border-radius: 3mm;
+      box-shadow: 0 0 1.2mm rgba(7, 16, 36, 0.45);
+      box-sizing: border-box;
+      overflow: hidden;
+      background: #f8fafc;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* BARRA COLORATA STILE NORD EUROPA */
+    .card-header-bar {
+      height: 9mm;
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      display: flex;
+      align-items: center;
+      padding: 0 5mm;
+      box-sizing: border-box;
+      color: #e5e7eb;
+    }
+
+    .card-header-title {
+      font-size: 3mm;
+      font-weight: 600;
+      letter-spacing: 0.4mm;
+      text-transform: uppercase;
+    }
+
+    .card-header-subtitle {
+      margin-left: auto;
+      font-size: 2.2mm;
+      opacity: 0.8;
+      text-transform: uppercase;
+    }
+
+    /* FRONTE */
+
+    .front-inner {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      padding: 4mm 5mm;
+      box-sizing: border-box;
+      gap: 4mm;
+    }
+
+    .front-left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .front-right {
+      width: 22mm;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .field-label {
+      font-size: 2.2mm;
+      text-transform: uppercase;
+      letter-spacing: 0.25mm;
+      color: #6b7280;
+      margin-top: 1mm;
+      margin-bottom: 0.4mm;
+    }
+
+    .field-value {
+      font-size: 2.9mm;
+      font-weight: 520;
+      color: #111827;
+      line-height: 1.25;
+    }
+
+    .mini {
+      font-size: 2.3mm;
+      color: #4b5563;
+    }
+
+    .photo {
+      width: 20mm;
+      height: 26mm;
+      border-radius: 2mm;
+      border: 0.35mm solid #9ca3af;
+      margin-top: 3mm;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2mm;
+      text-align: center;
+      padding: 1mm;
+      box-sizing: border-box;
+      background: #e5e7eb;
+    }
+
+    .id-row {
+      margin-top: 3mm;
+      font-size: 2.4mm;
+      color: #374151;
+    }
+
+    .id-label {
+      text-transform: uppercase;
+      letter-spacing: 0.2mm;
+      font-size: 2.1mm;
+      color: #6b7280;
+    }
+
+    .id-value {
+      font-weight: 500;
+    }
+
+    .footer-front {
+      font-size: 2mm;
+      color: #6b7280;
+      padding: 0 5mm 3mm 5mm;
+      box-sizing: border-box;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 0.7mm 2.5mm;
+      border: 0.25mm solid #cbd5f5;
+      font-size: 2mm;
+      text-transform: uppercase;
+      letter-spacing: 0.25mm;
+      color: #1e40af;
+      background: #e0ebff;
+      margin-top: 1mm;
+    }
+
+    /* RETRO */
+
+    .back-inner {
+      flex: 1;
+      padding: 4mm 5mm;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 2.3mm;
+      color: #111827;
+    }
+
+    .section-title {
+      font-size: 2.4mm;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.3mm;
+      color: #374151;
+      margin-bottom: 1mm;
+    }
+
+    .section-box {
+      border-radius: 1.5mm;
+      border: 0.25mm solid #d1d5db;
+      padding: 1.5mm 2mm;
+      margin-bottom: 2mm;
+      box-sizing: border-box;
+      background: #f9fafb;
+    }
+
+    .section-box small {
+      font-size: 2mm;
+      color: #6b7280;
+    }
+
+    .signature-line {
+      margin-top: 3mm;
+      border-top: 0.25mm solid #9ca3af;
+      padding-top: 0.8mm;
+      font-size: 2.1mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .signature-label {
+      color: #4b5563;
+    }
+
+    .signature-space {
+      flex: 1;
+      border-bottom: 0.2mm dashed #9ca3af;
+      margin-left: 3mm;
+      height: 0;
+    }
+
+    .disclaimer {
+      font-size: 1.9mm;
+      color: #6b7280;
+      line-height: 1.35;
+    }
+
+    .strong-disclaimer {
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.35mm;
+      margin-bottom: 1mm;
+    }
+
+    .qr-placeholder {
+      width: 18mm;
+      height: 18mm;
+      border-radius: 1mm;
+      border: 0.35mm dashed #9ca3af;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.9mm;
+      text-align: center;
+      margin-left: auto;
+      margin-top: 1mm;
+    }
+
+    .contact {
+      font-size: 2.1mm;
+      color: #374151;
+      line-height: 1.4;
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 5mm;
+      }
+      .card {
+        box-shadow: none;
+      }
+      .sheet {
+        gap: 6mm;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <!-- FRONTE -->
+    <div class="card">
+      <div class="card-header-bar">
+        <div class="card-header-title">Student Card</div>
+        <div class="card-header-subtitle">Personal ID</div>
+      </div>
+      <div class="front-inner">
+        <div class="front-left">
+          <div>
+            <div class="field-label">Nome e cognome</div>
+            <div class="field-value">Federico Somaschini</div>
+
+            <div class="field-label">Programme</div>
+            <div class="field-value">
+              MSc Artificial Intelligence<br />
+              <span class="mini">Utrecht University</span>
+            </div>
+
+            <div class="field-label">Data di nascita</div>
+            <div class="field-value">29 / 07 / 1990</div>
+
+            <div class="id-row">
+              <span class="id-label">ID studente</span><br />
+              <span class="id-value">________________________</span>
+            </div>
+
+            <div class="id-row">
+              <span class="id-label">Valido fino a</span><br />
+              <span class="id-value">____ / ____ / ______</span>
+            </div>
+          </div>
+
+          <div>
+            <span class="badge-pill">Uso personale</span>
+          </div>
+        </div>
+
+        <div class="front-right">
+          <div class="photo">
+            Incollare foto<br />
+            formato tessera
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-front">
+        Tessera personale di studio – non emessa né approvata
+        ufficialmente da Utrecht University o da altre istituzioni.
+      </div>
+    </div>
+
+    <!-- RETRO -->
+    <div class="card">
+      <div class="card-header-bar">
+        <div class="card-header-title">Back</div>
+        <div class="card-header-subtitle">Info & Note</div>
+      </div>
+      <div class="back-inner">
+        <div>
+          <div class="section-title">Contatti</div>
+          <div class="section-box">
+            <div class="contact">
+              Email: ___________________________<br />
+              Tel: _____________________________
+            </div>
+            <small>In caso di smarrimento, contattare il titolare della
+              tessera.</small>
+          </div>
+
+          <div class="section-title">Note personali</div>
+          <div class="section-box">
+            <small>
+              Spazio per eventuali informazioni aggiuntive (es. contatto
+              di emergenza, allergie, ecc.).
+            </small>
+            <br /><br />
+            ________________________________________<br />
+            ________________________________________<br />
+            ________________________________________
+          </div>
+        </div>
+
+        <div>
+          <div class="signature-line">
+            <span class="signature-label">Firma del titolare</span>
+            <span class="signature-space"></span>
+          </div>
+          <br />
+          <div style="display:flex; align-items:flex-start; gap:4mm; margin-top:1mm;">
+            <div style="flex:1;">
+              <div class="disclaimer">
+                <div class="strong-disclaimer">
+                  Non è un tesserino ufficiale
+                </div>
+                Questo badge è un supporto personale di riconoscimento
+                per lo studio e l’organizzazione individuale. Non sostituisce
+                documenti universitari, tessere studente ufficiali o altri
+                documenti di identità.
+              </div>
+            </div>
+            <div class="qr-placeholder">
+              Spazio QR<br />personale (URL,<br />portfolio, ecc.)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
