@@ -2,7 +2,12 @@
   class="logo-mark"
   src="<img
   class="logo-mark"
-  src="https://github.com/clarismetaverse/Unistudent/blob/main/uu-logo-removebg-preview.png"
+  src="<img
+  class="logo-mark"
+  src="https://raw.githubusercontent.com/clarismetaverse/Unistudent/main/uu-logo-removebg-preview.png"
+  alt="Personal logo"
+/>
+"
   alt="Personal logo"
 />
 "
